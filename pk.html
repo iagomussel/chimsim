@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChimSim — Farmacocinética</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💊</text></svg>" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="panel left">
+        <header class="mb-3 border-b border-slate-700 pb-3">
+          <div class="flex items-center justify-between">
+            <h1 class="text-lg font-bold text-white">💊 Farmacocinética</h1>
+            <a href="./index.html" class="btn btn-ghost">⚗️ Simulador</a>
+          </div>
+          <p class="text-xs text-slate-400">Concentração no sangue ao longo do tempo.</p>
+        </header>
+        <div id="pk-form"></div>
+      </aside>
+
+      <main id="stage">
+        <div class="border-b border-amber-700/60 bg-amber-950/60 px-3 py-2 text-xs text-amber-200">
+          ⚠️ <b>Uso só educativo.</b> Modelo simplificado com valores médios de adultos saudáveis. Não use para decidir dose,
+          tratamento ou overdose. Em caso de dúvida ou intoxicação, procure um médico ou o Disque-Intoxicação da Anvisa (0800 722 6001).
+        </div>
+        <div id="toolbar"></div>
+        <div id="canvas-wrap">
+          <canvas id="pk-canvas"></canvas>
+          <div id="pk-hover" class="overlay hidden"></div>
+        </div>
+      </main>
+
+      <aside class="panel right">
+        <div id="pk-metrics"></div>
+        <div id="pk-sources" class="mt-4"></div>
+      </aside>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/src/pk/main.ts"></script>
+  </body>
+</html>

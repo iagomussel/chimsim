@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChimSim — Simulador Químico e Elétrico</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚗️</text></svg>" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Esquerda: construtor -->
+      <aside class="panel left">
+        <header class="mb-4 border-b border-slate-700 pb-3">
+          <div class="flex items-center justify-between">
+            <h1 class="text-lg font-bold text-white">⚗️ ChimSim</h1>
+            <a href="./pk.html" class="btn btn-ghost" title="Módulo separado: remédio no corpo">💊 Farmacocinética</a>
+          </div>
+          <p class="text-xs text-slate-400">Química e eletricidade com dados reais.</p>
+        </header>
+        <div class="tabs">
+          <button class="tab active" data-tab="compound">Composto</button>
+          <button class="tab" data-tab="reaction">Reação</button>
+          <button class="tab" data-tab="info">Detalhes</button>
+        </div>
+        <section id="tab-compound" class="tab-body"></section>
+        <section id="tab-reaction" class="tab-body hidden"></section>
+        <section id="tab-info" class="tab-body hidden"></section>
+      </aside>
+
+      <!-- Centro: canvas -->
+      <main id="stage">
+        <div id="toolbar"></div>
+        <div id="canvas-wrap">
+          <canvas id="sim-canvas"></canvas>
+          <div id="hud" class="overlay top-2 left-2"></div>
+          <div id="inspector" class="overlay bottom-2 left-2 hidden"></div>
+          <div id="legend" class="overlay bottom-2 right-2 hidden"></div>
+        </div>
+      </main>
+
+      <!-- Direita: paleta -->
+      <aside class="panel right">
+        <div id="palette"></div>
+        <div class="mt-4">
+          <h2 class="section-title">Reações recentes</h2>
+          <ul id="event-log" class="text-[11px] font-mono text-slate-400 space-y-0.5"></ul>
+        </div>
+      </aside>
+    </div>
+    <div id="toast"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
